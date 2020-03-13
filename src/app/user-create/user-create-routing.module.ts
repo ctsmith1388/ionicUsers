@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { UserCreatePageRoutingModule } from './user-create-routing.module';
 
 import { UserCreatePage } from './user-create.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: UserCreatePage
-  }
-];
-
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    UserCreatePageRoutingModule
+  ],
+  declarations: [UserCreatePage]
 })
-export class UserCreatePageRoutingModule {}
+export class UserCreatePageModule {}
